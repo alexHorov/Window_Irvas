@@ -5,7 +5,7 @@ const changeModalState = (state) => {
         windowWidth = document.querySelectorAll('#width'),
         windowHeight = document.querySelectorAll('#height'),
         windowType = document.querySelectorAll('#view_type'),
-        windowProfile = document.querySelector('.checkbox');
+        windowProfile = document.querySelectorAll('.checkbox');
 
     checkNumInputs('#width');
     checkNumInputs('#height');
@@ -25,7 +25,7 @@ const changeModalState = (state) => {
                                 if (i == j) {
                                     box.checked = true;
                                 }
-                            })
+                            });
                         } else {
                             state[prop] = item.value;
                         }
@@ -37,10 +37,9 @@ const changeModalState = (state) => {
 
                 console.log(state);
             });
-
         });
-
     }
+
     bindActionToElems('click', windowForm, 'form');
     bindActionToElems('input', windowHeight, 'height');
     bindActionToElems('input', windowWidth, 'width');
